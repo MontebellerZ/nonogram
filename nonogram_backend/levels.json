@@ -1,0 +1,353 @@
+[
+    {
+        "filepath": "non\\1.non",
+        "title": "Dancer",
+        "author": "Jan Wolter",
+        "copyright": "© 2004 Jan Wolter",
+        "license": "CC-BY-3.0",
+        "height": 10,
+        "width": 5
+    },
+    {
+        "filepath": "non\\26167.non",
+        "title": "Bloop Bloop",
+        "author": "Michael Terry",
+        "copyright": "© 2015 Michael Terry",
+        "license": "CC-BY-SA-4.0",
+        "height": 10,
+        "width": 10
+    },
+    {
+        "filepath": "non\\mouse.non",
+        "title": "Not a Rat",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2007 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 10,
+        "width": 25
+    },
+    {
+        "filepath": "non\\21.non",
+        "title": "Slippery Conditions",
+        "author": "Jan Wolter",
+        "copyright": "© 2004 Jan Wolter",
+        "license": "CC-BY-3.0",
+        "height": 25,
+        "width": 14
+    },
+    {
+        "filepath": "non\\6.non",
+        "title": "Scardy Cat",
+        "author": "Jan Wolter",
+        "copyright": "© 2004 Jan Wolter",
+        "license": "CC-BY-3.0",
+        "height": 20,
+        "width": 20
+    },
+    {
+        "filepath": "non\\candle.non",
+        "title": "Burning",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2007 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 25,
+        "width": 20
+    },
+    {
+        "filepath": "non\\spade.non",
+        "title": "Spade",
+        "author": "Frederico Vera <dktcoding@gmail.com>",
+        "copyright": "© 2010 Frederico Vera <dktcoding@gmail.com>",
+        "license": "CC-BY-SA-4.0",
+        "height": 23,
+        "width": 23
+    },
+    {
+        "filepath": "non\\rhino.non",
+        "title": "In Name Only",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2007 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 20,
+        "width": 30
+    },
+    {
+        "filepath": "non\\blender.non",
+        "title": "Blender",
+        "author": "Frederico Vera <dktcoding@gmail.com>",
+        "copyright": "© 2010 Frederico Vera <dktcoding@gmail.com>",
+        "license": "CC-BY-SA-4.0",
+        "height": 25,
+        "width": 30
+    },
+    {
+        "filepath": "non\\42.non",
+        "title": "Meaning of life the universe and",
+        "author": "Frederico Vera <dktcoding@gmail.com>",
+        "copyright": "© 2010 Frederico Vera <dktcoding@gmail.com>",
+        "license": "CC-BY-SA-4.0",
+        "height": 23,
+        "width": 35
+    },
+    {
+        "filepath": "non\\gnome.non",
+        "title": "Gnome",
+        "author": "Frederico Vera <dktcoding@gmail.com>",
+        "copyright": "© 2010 Frederico Vera <dktcoding@gmail.com>",
+        "license": "CC-BY-SA-4.0",
+        "height": 34,
+        "width": 27
+    },
+    {
+        "filepath": "non\\100.non",
+        "title": "No Longer a Kid",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\101.non",
+        "title": "Mr Cool",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\102.non",
+        "title": "Mr Western",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\104.non",
+        "title": "Iguana Hair",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\105.non",
+        "title": "Smooth Tiger",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\106.non",
+        "title": "Big Hair",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\107.non",
+        "title": "Hair Everywhere",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\108.non",
+        "title": "Nuts",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\122.non",
+        "title": "Cheese",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\123.non",
+        "title": "Charlie",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\125.non",
+        "title": "Ant",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\127.non",
+        "title": "Bark Like a Tree and Get Out of Here",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\130.non",
+        "title": "Who Can? You Can!",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\132.non",
+        "title": "Hoodie",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\133.non",
+        "title": "Mill",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\54.non",
+        "title": "Nosey",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\94.non",
+        "title": "Artist",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\95.non",
+        "title": "Kid",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\97.non",
+        "title": "Singer",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\98.non",
+        "title": "Belle",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2008 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\flower.non",
+        "title": "Not a Weed",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2007 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 35,
+        "width": 30
+    },
+    {
+        "filepath": "non\\16.non",
+        "title": "Probably Not",
+        "author": "Jan Wolter",
+        "copyright": "© 2004 Jan Wolter",
+        "license": "CC-BY-3.0",
+        "height": 34,
+        "width": 34
+    },
+    {
+        "filepath": "non\\ubuntu.non",
+        "title": "Ubuntu",
+        "author": "Frederico Vera <dktcoding@gmail.com>",
+        "copyright": "© 2010 Frederico Vera <dktcoding@gmail.com>",
+        "license": "CC-BY-SA-4.0",
+        "height": 35,
+        "width": 35
+    },
+    {
+        "filepath": "non\\wikimedia.non",
+        "title": "Wikimedia",
+        "author": "Frederico Vera <dktcoding@gmail.com>",
+        "copyright": "© 2010 Frederico Vera <dktcoding@gmail.com>",
+        "license": "CC-BY-SA-4.0",
+        "height": 38,
+        "width": 39
+    },
+    {
+        "filepath": "non\\kde.non",
+        "title": "KDE",
+        "author": "Frederico Vera <dktcoding@gmail.com>",
+        "copyright": "© 2010 Frederico Vera <dktcoding@gmail.com>",
+        "license": "CC-BY-SA-4.0",
+        "height": 41,
+        "width": 41
+    },
+    {
+        "filepath": "non\\529.non",
+        "title": "Swing",
+        "author": "Jan Wolter",
+        "copyright": "© 2006 Jan Wolter",
+        "license": "CC-BY-3.0",
+        "height": 45,
+        "width": 45
+    },
+    {
+        "filepath": "non\\sun.non",
+        "title": "Brightly",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2007 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 60,
+        "width": 50
+    },
+    {
+        "filepath": "non\\tiger.non",
+        "title": "Burning Brightly",
+        "author": "Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "copyright": "© 2007 Alexander Meshcheryakov <alexander.s.m@gmail.com>",
+        "license": "GPL-2.0",
+        "height": 50,
+        "width": 75
+    }
+]
