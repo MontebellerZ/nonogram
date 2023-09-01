@@ -6,7 +6,13 @@ export function totalCombinations(row: number[], maxLength: number) {
     const emptyBlocks = maxLength - usedBlocks;
     const totalBlocks = blockGroups + emptyBlocks;
 
-    return factorial(totalBlocks) / (factorial(blockGroups) * (totalBlocks - blockGroups));
+    const totalFact = factorial(totalBlocks);
+    const groupsFact = factorial(blockGroups);
+    const repeatingFact = factorial(totalBlocks - blockGroups);
+
+    const combinations = totalFact / (groupsFact * repeatingFact);
+
+    return Math.round(combinations);
 }
 
 function combinations(arr: number[], k: number): number[][] {

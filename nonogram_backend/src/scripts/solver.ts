@@ -33,19 +33,15 @@ function willOverlap(row: number[], maxLength: number): number {
 }
 
 function isWorthOverlap(row: number[], maxLength: number) {
-    const combinationsLimit = 200_000_000_000_000;
-    const worthPercentage = 0;
+    const combinationsLimit = 200_000;
 
     const overlapBlocks = willOverlap(row, maxLength);
     if (overlapBlocks <= 0) return false;
 
-    const overlapPercentage = (overlapBlocks * 100) / maxLength;
-    if (overlapPercentage < worthPercentage) return false;
-
     const combinations = totalCombinations(row, maxLength);
     if (combinations > combinationsLimit) return false;
 
-    console.log(overlapBlocks, overlapPercentage, combinations);
+    console.log(overlapBlocks, combinations);
 
     return true;
 }
