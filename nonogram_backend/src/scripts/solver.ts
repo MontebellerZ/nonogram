@@ -3,80 +3,105 @@ import { nonoCombinations, totalCombinations } from "./combinations";
 import printer from "./printer";
 
 function certainInCombs(combination: boolean[][], maxLength: number): boolean[] {
-    const result: boolean[] = new Array(maxLength).fill(null);
+	const result: boolean[] = new Array(maxLength).fill(null);
 
-    for (let i = 0; i < maxLength; i++) {
-        let flagFalse = true;
-        let flagTrue = true;
+	for (let i = 0; i < maxLength; i++) {
+		let flagFalse = true;
+		let flagTrue = true;
 
-        for (let j = 0; j < combination.length; j++) {
-            if (combination[j][i]) flagFalse = false;
-            if (!combination[j][i]) flagTrue = false;
+		for (let j = 0; j < combination.length; j++) {
+			if (combination[j][i]) flagFalse = false;
+			if (!combination[j][i]) flagTrue = false;
 
-            if (!flagFalse && !flagTrue) break;
-        }
+			if (!flagFalse && !flagTrue) break;
+		}
 
-        if (flagFalse) result[i] = false;
-        if (flagTrue) result[i] = true;
-    }
+		if (flagFalse) result[i] = false;
+		if (flagTrue) result[i] = true;
+	}
 
-    return result;
+	return result;
 }
 
 function willOverlap(row: number[], maxLength: number): number {
-    const totalBlocks = row.reduce((sum, val) => sum + val, row.length - 1);
-    const blankBlocks = maxLength - totalBlocks;
+	const totalBlocks = row.reduce((sum, val) => sum + val, row.length - 1);
+	const blankBlocks = maxLength - totalBlocks;
 
-    const overlapBlocks = row.reduce((sum, val) => sum + Math.max(val - blankBlocks, 0), 0);
+	const overlapBlocks = row.reduce((sum, val) => sum + Math.max(val - blankBlocks, 0), 0);
 
-    return overlapBlocks;
+	return overlapBlocks;
 }
 
 function isWorthOverlap(row: number[], maxLength: number) {
-    const combinationsLimit = 200_000;
+	const overlapBlocks = willOverlap(row, maxLength);
+	if (overlapBlocks <= 0) return false;
 
-    const overlapBlocks = willOverlap(row, maxLength);
-    if (overlapBlocks <= 0) return false;
+	return true;
+}
 
-    const combinations = totalCombinations(row, maxLength);
-    if (combinations > combinationsLimit) return false;
+function overlapResult(row: number[], maxLength: number): boolean[] {
+	const fullRow: boolean[] = new Array(maxLength).fill(null);
 
-    console.log(overlapBlocks, combinations);
+	row.forEach((group, i, arr) => {
+		const beforeGroup = arr.slice(0, i).reduce((sum, val) => sum + val, i);
+		const afterGroup = arr.slice(i + 1).reduce((sum, val) => sum + val, arr.length - (i + 1));
 
-    return true;
+		const beginBorder = beforeGroup + group;
+		const endBorder = maxLength - afterGroup - group;
+
+		for (let j = endBorder; j < beginBorder; j++) fullRow[j] = true;
+	});
+
+	return fullRow;
 }
 
 function fillCertains(resolution: boolean[][], rows: number[][], columns: number[][]) {
-    const maxColumns = columns.length;
-    const maxRows = rows.length;
+	const maxColumns = columns.length;
+	const maxRows = rows.length;
 
-    for (let i = 0; i < maxRows; i++) {
-        const row = rows[i];
+	for (let i = 0; i < maxRows; i++) {
+		const row = rows[i];
 
-        const isWorth = isWorthOverlap(row, maxColumns);
+		const isWorth = isWorthOverlap(row, maxColumns);
 
-        if (!isWorth) continue;
+		if (!isWorth) continue;
 
-        const t1 = Date.now();
-        const combinations = nonoCombinations(row, maxColumns);
-        console.log("Time taken:", Date.now() - t1, "ms");
+		const overlapped = overlapResult(row, maxColumns);
 
-        const newRow = certainInCombs(combinations, maxColumns);
+		overlapped.forEach((v, j) => {
+			if (v != null) resolution[i][j] = v;
+		});
+	}
 
-        // console.log(newRow);
-    }
+	for (let i = 0; i < maxColumns; i++) {
+		const column = columns[i];
+
+		const isWorth = isWorthOverlap(column, maxRows);
+
+		if (!isWorth) continue;
+
+		const overlapped = overlapResult(column, maxRows);
+
+		overlapped.forEach((v, j) => {
+			if (v != null) resolution[j][i] = v;
+		});
+	}
 }
 
 function solver(level: nonData) {
-    const { goal, height, width, rows, columns } = level;
+	const { goal, height, width, rows, columns } = level;
 
-    const resolution: boolean[][] = [];
+	const resolution: boolean[][] = [];
 
-    for (let i = 0; i < height; i++) resolution.push(new Array(width).fill(null));
+	for (let i = 0; i < height; i++) resolution.push(new Array(width).fill(null));
 
-    fillCertains(resolution, rows, columns);
+	fillCertains(resolution, rows, columns);
 
-    // printer(goal);
+	printer(resolution);
+
+	// console.log("\n\n");
+
+	// printer(goal);
 }
 
 export default solver;
