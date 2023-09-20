@@ -2,42 +2,14 @@ import { nonData } from "../types";
 import { nonoCombinations, totalCombinations } from "./combinations";
 import printer from "./printer";
 
-function certainInCombs(combination: boolean[][], maxLength: number): boolean[] {
-	const result: boolean[] = new Array(maxLength).fill(null);
-
-	for (let i = 0; i < maxLength; i++) {
-		let flagFalse = true;
-		let flagTrue = true;
-
-		for (let j = 0; j < combination.length; j++) {
-			if (combination[j][i]) flagFalse = false;
-			if (!combination[j][i]) flagTrue = false;
-
-			if (!flagFalse && !flagTrue) break;
-		}
-
-		if (flagFalse) result[i] = false;
-		if (flagTrue) result[i] = true;
-	}
-
-	return result;
+function getResolutionRow(rowId: number, resolution: boolean[][]): boolean[] {
+	return resolution[rowId];
+}
+function getResolutionColumn(columnId: number, resolution: boolean[][]): boolean[] {
+	return resolution.map((row) => row[columnId]);
 }
 
-function willOverlap(row: number[], maxLength: number): number {
-	const totalBlocks = row.reduce((sum, val) => sum + val, row.length - 1);
-	const blankBlocks = maxLength - totalBlocks;
-
-	const overlapBlocks = row.reduce((sum, val) => sum + Math.max(val - blankBlocks, 0), 0);
-
-	return overlapBlocks;
-}
-
-function isWorthOverlap(row: number[], maxLength: number) {
-	const overlapBlocks = willOverlap(row, maxLength);
-	if (overlapBlocks <= 0) return false;
-
-	return true;
-}
+function whoIBelongTo() {}
 
 function overlapResult(row: number[], maxLength: number): boolean[] {
 	const fullRow: boolean[] = new Array(maxLength).fill(null);
@@ -55,17 +27,12 @@ function overlapResult(row: number[], maxLength: number): boolean[] {
 	return fullRow;
 }
 
-function fillCertains(resolution: boolean[][], rows: number[][], columns: number[][]) {
+function fillInitial(resolution: boolean[][], rows: number[][], columns: number[][]) {
 	const maxColumns = columns.length;
 	const maxRows = rows.length;
 
 	for (let i = 0; i < maxRows; i++) {
 		const row = rows[i];
-
-		const isWorth = isWorthOverlap(row, maxColumns);
-
-		if (!isWorth) continue;
-
 		const overlapped = overlapResult(row, maxColumns);
 
 		overlapped.forEach((v, j) => {
@@ -75,11 +42,6 @@ function fillCertains(resolution: boolean[][], rows: number[][], columns: number
 
 	for (let i = 0; i < maxColumns; i++) {
 		const column = columns[i];
-
-		const isWorth = isWorthOverlap(column, maxRows);
-
-		if (!isWorth) continue;
-
 		const overlapped = overlapResult(column, maxRows);
 
 		overlapped.forEach((v, j) => {
@@ -88,6 +50,8 @@ function fillCertains(resolution: boolean[][], rows: number[][], columns: number
 	}
 }
 
+// function fill
+
 function solver(level: nonData) {
 	const { goal, height, width, rows, columns } = level;
 
@@ -95,13 +59,15 @@ function solver(level: nonData) {
 
 	for (let i = 0; i < height; i++) resolution.push(new Array(width).fill(null));
 
-	fillCertains(resolution, rows, columns);
+	fillInitial(resolution, rows, columns);
 
 	printer(resolution);
 
 	// console.log("\n\n");
 
 	// printer(goal);
+
+	return resolution;
 }
 
 export default solver;
