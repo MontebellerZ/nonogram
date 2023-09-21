@@ -34,10 +34,11 @@ function printer(grid: boolean[][]) {
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[i].length; j++) {
             const value = grid[i][j];
-            const printColor = value ? Colors.BgGreen : Colors.BgWhite;
+            const printBgColor = value ? Colors.BgGreen : Colors.BgWhite;
+            const printFgColor = value === null ? Colors.FgGray : Colors.FgWhite;
             const printText = value === null ? "X " : "  ";
 
-            gridPrint += printColor + printText + Colors.Reset;
+            gridPrint += printBgColor + printFgColor + printText + Colors.Reset;
         }
 
         gridPrint += "\n";
