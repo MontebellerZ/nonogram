@@ -8,22 +8,22 @@ const app = express();
 app.use(cors());
 app.use(express.json({ limit: "2024mb" }));
 app.use(
-	express.urlencoded({
-		extended: true,
-		type: "application/json",
-		limit: "2024mb",
-	})
+    express.urlencoded({
+        extended: true,
+        type: "application/json",
+        limit: "2024mb",
+    })
 );
 
 app.use("/public", express.static("public"));
 
 app.get("/non/:id", (req, res) => {
-	const levelID = Number(req.params.id);
+    const levelID = Number(req.params.id);
 
-	const lvl = getLevel(levelID);
-	const teste = solver(lvl);
+    const lvl = getLevel(levelID);
+    const teste = solver(lvl);
 
-	res.send(teste);
+    res.send(teste);
 });
 
 const PORT = 3000;

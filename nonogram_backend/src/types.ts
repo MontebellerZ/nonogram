@@ -2,8 +2,6 @@ export type nonFile = {
     filepath: string;
     title: string;
     author: string;
-    copyright: string;
-    license: string;
     height: number;
     width: number;
 };

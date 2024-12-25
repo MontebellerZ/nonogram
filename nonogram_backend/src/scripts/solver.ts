@@ -84,6 +84,12 @@ function calcTrueRange(group: number, pos: number, availableRange: number[]) {
         Math.min(pos + group, availableRange[1]),
     ];
 
+    return trueRange;
+}
+
+function calcOverlapMarks(group: number, pos: number, availableRange: number[]) {
+    const trueRange = calcTrueRange(group, pos, availableRange);
+
     return overlapGroup(group, trueRange);
 }
 
@@ -96,6 +102,7 @@ function pushToLast(arr: number[], val: number) {
 function fillRow(
     resolution: boolean[][],
     rows: number[][],
+    columns: number[][],
     changedRows: number[],
     changedColumns: number[]
 ) {
@@ -104,17 +111,17 @@ function fillRow(
     const rowID = changedRows.shift() as number;
     const row = getResolutionRow(rowID, resolution);
     const rowCode = rows[rowID];
-    const rowRanges = groupRanges(rowCode, rows.length);
+    const rowRanges = groupRanges(rowCode, columns.length);
 
     for (let j = 0; j < row.length; j++) {
         if (row[j] === null) continue;
 
-        if (row[j]) {
+        if (row[j] === true) {
             const belongs = whoIBelongTo(j, rowRanges);
 
             if (belongs.length > 1) continue;
 
-            const marks = calcTrueRange(belongs[0].group, j, belongs[0].range);
+            const marks = calcOverlapMarks(belongs[0].group, j, belongs[0].range);
 
             for (const id of marks) {
                 const markResult = true;
@@ -132,6 +139,7 @@ function fillRow(
 
 function fillColumn(
     resolution: boolean[][],
+    rows: number[][],
     columns: number[][],
     changedRows: number[],
     changedColumns: number[]
@@ -141,7 +149,7 @@ function fillColumn(
     const columnID = changedColumns.shift() as number;
     const column = getResolutionColumn(columnID, resolution);
     const columnCode = columns[columnID];
-    const columnRanges = groupRanges(columnCode, columns.length);
+    const columnRanges = groupRanges(columnCode, rows.length);
 
     for (let j = 0; j < column.length; j++) {
         if (column[j] === null) continue;
@@ -151,7 +159,7 @@ function fillColumn(
 
             if (belongs.length > 1) continue;
 
-            const marks = calcTrueRange(belongs[0].group, j, belongs[0].range);
+            const marks = calcOverlapMarks(belongs[0].group, j, belongs[0].range);
 
             for (const id of marks) {
                 const markResult = true;
@@ -175,8 +183,8 @@ function fillGeneral(
     changedColumns: number[]
 ) {
     while (changedRows.length > 0 || changedColumns.length > 0) {
-        fillRow(resolution, rows, changedRows, changedColumns);
-        fillColumn(resolution, columns, changedRows, changedColumns);
+        fillRow(resolution, rows, columns, changedRows, changedColumns);
+        fillColumn(resolution, rows, columns, changedRows, changedColumns);
     }
 }
 
@@ -196,14 +204,16 @@ function solver(level: nonData) {
         for (let j = 0; j < width; j++) {
             if (resolution[i][j] === null) continue;
 
-            if (!changedRows.includes(i)) changedRows.push(i);
-            if (!changedColumns.includes(j)) changedColumns.push(j);
+            pushToLast(changedRows, i);
+            pushToLast(changedColumns, j);
         }
     }
 
     fillGeneral(resolution, rows, columns, changedRows, changedColumns);
 
     printer(resolution);
+
+    // printer(goal);
 
     return resolution;
 }
